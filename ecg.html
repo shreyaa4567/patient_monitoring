@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Patient Monitoring Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <h1>❤️ Patient Monitoring Dashboard</h1>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Monitor ECG and Heart Rate in Real-Time</h2>
+      <p>Track your patient's heart activity securely with instant cloud connectivity and real-time visualization.</p>
+      <button class="primary-btn" id="connectBtn">Connect Device</button>
+      <button class="secondary-btn" id="disconnectBtn" disabled>Disconnect</button>
+      <p id="status">Disconnected ❌</p>
+      <p class="broker-info">Broker: <span>wss://broker.hivemq.com:8884/mqtt</span> | Topic: <span>ecg/data</span></p>
+    </div>
+    <div class="hero-image">
+      <img src="https://cdn-icons-png.flaticon.com/512/6869/6869690.png" alt="ECG Monitor Illustration">
+    </div>
+  </section>
+
+  <!-- Chart Section -->
+  <section class="chart-section">
+    <h3>Live ECG Signal</h3>
+    <canvas id="ecgChart" width="800" height="300"></canvas>
+    <div class="info-cards">
+      <div class="card bpm">
+        <i class="fa-solid fa-heart-pulse"></i>
+        <h4>Heart Rate (BPM)</h4>
+        <p id="bpmValue">--</p>
+      </div>
+      <div class="card value">
+        <i class="fa-solid fa-wave-square"></i>
+        <h4>Last ECG Value</h4>
+        <p id="lastValue">--</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h3>Key Features</h3>
+    <div class="feature-grid">
+      <div class="feature">
+        <h4>📈 Accurate ECG Data</h4>
+        <p>Receive precise, real-time ECG readings from the connected device to monitor patient health effectively.</p>
+      </div>
+      <div class="feature">
+        <h4>⚡ Fast Connectivity</h4>
+        <p>Instantly transmit ECG signals from the ESP32 via MQTT to ensure no delay in critical readings.</p>
+      </div>
+      <div class="feature">
+        <h4>💻 Easy-to-Use Interface</h4>
+        <p>A clean, responsive, and intuitive design built for doctors, nurses, and researchers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Patient Monitoring Dashboard | Built by Shreya Singh</p>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/a2e0b2b84e.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+</body>
+</html>
